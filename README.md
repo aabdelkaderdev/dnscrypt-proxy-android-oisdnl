@@ -22,10 +22,10 @@ All binary files are downloaded directly from the official [release page](https:
 
 ## Installation
 
-1. Download the latest `dnscrypt-proxy-android-revived-*.zip` from the [Releases](https://github.com/Turbolqk/dnscrypt-proxy-android-revived/releases/latest) page.
+1. Download the latest `dnscrypt-proxy-android-*.zip` from the [Releases](https://github.com/Turbolqk/dnscrypt-proxy-android/releases) page.
 2. Flash it via:
 ```
-Magisk > Modules > Install from storage > dnscrypt-proxy-android-revived-*.zip
+Magisk > Modules > Install from storage > dnscrypt-proxy-android-*.zip
 ```
 3. Reboot your device.
 4. Test your DNS at [DNS Leak Test](https://dnsleaktest.com/) or [DNSCheck](https://dnscheck.tools/).
