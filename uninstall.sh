@@ -23,7 +23,7 @@ PATHS=(
     "/mnt/runtime/read/emulated/0/dnscrypt-proxy"
     "/mnt/runtime/write/emulated/0/dnscrypt-proxy"
     "/sdcard/dnscrypt-proxy"
-    "/storage/emulated/0/dnscrypt-proxy"
+    "/data/adb/dnscrypt-proxy"
     "/storage/self/primary/dnscrypt-proxy"
 )
 
