@@ -10,7 +10,26 @@
 MODDIR=${0%/*}
 
 BIN="$MODDIR/system/bin/dnscrypt-proxy"
-CONF="/storage/emulated/0/dnscrypt-proxy/dnscrypt-proxy.toml"
+CONF="/data/adb/dnscrypt-proxy/dnscrypt-proxy.toml"
+
+# ------------------------------
+# Auto-Update OISD Blocklists (Background)
+# ------------------------------
+(
+    # Wait for an active internet connection
+    while ! ping -c 1 -W 1 8.8.8.8 >/dev/null 2>&1; do
+        sleep 10
+    done
+
+    TARGET_FILE="/data/adb/dnscrypt-proxy/blocked-names.txt"
+
+    # Pull both OISD domainsets, merge, remove duplicates, and output to target
+    {
+        curl -sL https://big.oisd.nl/domainswild
+        curl -sL https://nsfw.oisd.nl/domainswild
+    } | sort -u > "$TARGET_FILE"
+    
+) &
 
 # ------------------------------
 # Run dnscrypt-proxy until it starts successfully
